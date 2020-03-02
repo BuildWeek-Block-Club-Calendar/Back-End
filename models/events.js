@@ -15,9 +15,21 @@ const eventSchema = new Schema({
         type: String,
         required: true
     },
-    geolocation: {
+    eventCity: {
         type: String,
         required: true
+    },
+    eventCountry: {
+        type: String,
+        required: true
+    },
+    latitude: {
+        type: String,
+        required: false
+    },
+    longitude: {
+        type: String,
+        required: false
     },
     eventDescription: {
         type: String,
