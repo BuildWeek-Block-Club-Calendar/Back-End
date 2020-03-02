@@ -31,11 +31,23 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    events: {
+        type: Array,
+        require: false
+    },
     photo: {
         data: Buffer,
         contentType: String,
         required: false
-    }                                                                  
+    },                                                       
+    lattitude: {
+        type: String,
+        required: false
+    },
+    longitude: {
+        type: String,
+        required: false
+    }
 })
 
 const Users = mongoose.model('users', userSchema)
