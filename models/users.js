@@ -39,7 +39,15 @@ const userSchema = new Schema({
         data: Buffer,
         contentType: String,
         required: false
-    }                                                                  
+    },                                                       
+    lattitude: {
+        type: String,
+        required: false
+    },
+    longitude: {
+        type: String,
+        required: false
+    }
 })
 
 const Users = mongoose.model('users', userSchema)

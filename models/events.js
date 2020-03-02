@@ -39,7 +39,11 @@ const eventSchema = new Schema({
         data: Buffer,
         contentType: String,
         required: false
-    }                                                                  
+    },
+    rsvpd: {
+        type: Array,
+        required: false
+    }                                                                 
 })
 
 const Events = mongoose.model('events', eventSchema)
