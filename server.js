@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const userRouter = require('./routes/users')
+const restRouter = require('./routes/rest')
 
 const auth = require('./middleware/auth') // ready for auth routes
 const configure = require('./middleware/config')
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO || 'mongodb://localhost:27017/bw4', { useNewU
 );
 
 server.use('/api/users', userRouter)
+server.use('/api/rest', auth, restRouter)
 
 server.get('/', (req, res) => {
     res.send('<h2>“The code is more what you’d call ‘guidelines’ than actual rules.” – Hector Barbossa</h2>')

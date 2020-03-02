@@ -40,7 +40,7 @@ city: {
     type: String,
     required: false
 },
-zipcode: {
+country: {
     type: String,
     required: false
 },
@@ -56,7 +56,7 @@ photo: {
     data: Buffer,
     contentType: String,
     required: false
-},
+},                                                       
 lattitude: {
     type: String,
     required: false
@@ -81,9 +81,21 @@ eventAddress: {
     type: String,
     required: true
 },
-geolocation: {
+eventCity: {
     type: String,
     required: true
+},
+eventCountry: {
+    type: String,
+    required: true
+},
+latitude: {
+    type: String,
+    required: false
+},
+longitude: {
+    type: String,
+    required: false
 },
 eventDescription: {
     type: String,
@@ -109,5 +121,5 @@ photo: {
 rsvpd: {
     type: Array,
     required: false
-}
+}                 
 ```

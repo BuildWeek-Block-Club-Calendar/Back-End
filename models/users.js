@@ -23,7 +23,7 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
-    zipcode: {
+    country: {
         type: String,
         required: false
     },
