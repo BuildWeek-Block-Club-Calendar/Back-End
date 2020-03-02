@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:BuildWeek-Block-Club-Calendar/Back-End.git",
+  "author": "Daniel Mattox <dmattox10@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "argon2": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.2"
+  }
+}

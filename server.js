@@ -2,7 +2,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const userRouter = require('./routes/users')
-const fakeRouter = require('./routes/faker')
 
 const auth = require('./middleware/auth') // ready for auth routes
 const configure = require('./middleware/config')
