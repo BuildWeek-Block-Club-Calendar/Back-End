@@ -31,6 +31,10 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    events: {
+        type: Array,
+        require: false
+    },
     photo: {
         data: Buffer,
         contentType: String,

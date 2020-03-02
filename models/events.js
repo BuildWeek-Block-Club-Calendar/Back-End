@@ -7,6 +7,10 @@ const eventSchema = new Schema({
         type: String,
         required: true
     },
+    eventCreator: {
+        type: String,
+        required: true
+    },
     eventAddress: {
         type: String,
         required: true
