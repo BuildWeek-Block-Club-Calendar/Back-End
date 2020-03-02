@@ -10,6 +10,8 @@ OPTIONAL city
 OPTIONAL zipcode  
 OPTIONAL businessName  
 OPTIONAL photo (Not yet saving)  
+OPTIONAL lattitude
+OPTIONAL longitude
 
 ## /api/users/login
 ### POST with
