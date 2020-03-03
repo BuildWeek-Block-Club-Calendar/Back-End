@@ -37,6 +37,9 @@ REQUIRED eventCountry
 ## /api/rest/user/:id
 ### GET a user object
 
+## /api/guest
+### GET all events, guest view
+
 ## User Schema
 ```js
 email: {
