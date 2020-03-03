@@ -47,6 +47,14 @@ const userSchema = new Schema({
     longitude: {
         type: String,
         required: false
+    },
+    start: {
+        type: String,
+        required: false
+    },
+    end: {
+        type: String,
+        required: false
     }
 })
 
