@@ -5,7 +5,7 @@ const router = express.Router()
 const Events = require('../models/events')
 const Users = require('../models/users')
 
-router.post('/events/create', (req, res) => {
+router.post('/events', (req, res) => {
     const { eventTitle, eventCreator, eventAddress, eventCity, eventCountry, latitude, longitude, eventDescription, eventStart, eventEnd, externalLink, photo } = req.body
     if (eventTitle && eventCreator && eventAddress && eventCity && eventCountry && eventDescription && eventStart && eventEnd) {
         const newEvent = new Events({

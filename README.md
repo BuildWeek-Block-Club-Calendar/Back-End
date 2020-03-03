@@ -16,7 +16,21 @@ OPTIONAL longitude
 ## /api/users/login
 ### POST with
 REQUIRED email  
-REQUIRED password   
+REQUIRED password  
+
+## /api/rest/events
+### POST with all required fields as seen in schema
+
+## /api/rest/events/:id
+### GET the details for an event
+### PUT to update an event
+### DELETE to remove an event entirely
+
+## /api/rest/events/near
+### POST COMING SOON
+
+## /api/rest/events/attend/:id
+### GET coming soon, to toggle attendance
 
 ## User Schema
 ```js
