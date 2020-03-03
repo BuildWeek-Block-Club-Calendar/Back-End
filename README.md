@@ -32,7 +32,10 @@ REQUIRED password
 REQUIRED eventCountry
 
 ## /api/rest/events/attend/:id
-### GET coming soon, to toggle attendance
+### GET to add user to event list, and event to user's list of events
+
+## /api/rest/user/:id
+### GET a user object
 
 ## User Schema
 ```js
