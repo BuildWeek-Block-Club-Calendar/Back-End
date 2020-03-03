@@ -35,6 +35,16 @@ router.post('/events', (req, res) => {
     }
 })
 
+router.get('/events', (req, res) => {
+    Events.find()
+    .then(events => {
+        res.status(200).json(events)
+    })
+    .catch(err => {
+        res.status(500).json(err)
+    })
+})
+
 router.post('/events/near', (req, res) => {
     const { eventCountry } = req.body
     if (eventCountry) {
