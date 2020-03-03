@@ -20,6 +20,7 @@ REQUIRED password
 
 ## /api/rest/events
 ### POST with all required fields as seen in schema
+### GET to get all events everywhere
 
 ## /api/rest/events/:id
 ### GET the details for an event
