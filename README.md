@@ -27,7 +27,8 @@ REQUIRED password
 ### DELETE to remove an event entirely
 
 ## /api/rest/events/near
-### POST COMING SOON
+### POST with
+REQUIRED eventCountry
 
 ## /api/rest/events/attend/:id
 ### GET coming soon, to toggle attendance

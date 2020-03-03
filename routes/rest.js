@@ -36,8 +36,8 @@ router.post('/events', (req, res) => {
 })
 
 router.post('/events/near', (req, res) => {
-    const { country } = req.body
-    if (country) {
+    const { eventCountry } = req.body
+    if (eventCountry) {
         Events.find({ eventCountry })
         .then(events => {
             res.status(200).json(events)
@@ -95,7 +95,30 @@ router.delete('/events/:id', (req, res) => {
 })
 
 router.get('/events/attend/:id', (req, res) => {
-
+    const { _id } = req.body
+    Events.findByIdAndUpdate({ _id: req.params.id }, {
+        $push: {
+            rsvpd: _id
+        }
+    }, { new: true })
+    .then(event => {
+        Users.findByIdAndUpdate({ _id: _id }, {
+            $push: {
+                events: req.params.id
+            }
+        }, { new: true })
+        .then(user => {
+            res.status(200).json(user)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+        
+    })
+    .catch(err => {
+        res.status(500).json
+    })
+    
 })
 
 module.exports = router
