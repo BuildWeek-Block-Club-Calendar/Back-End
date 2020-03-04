@@ -8,7 +8,7 @@ const router = express.Router()
 const Users = require('../models/users')
 
 router.post('/register', (req, res) => {
-    const { first_name, last_name, email, password } = req.body
+    const { email, password, username, streetAddress, city, country, businessName, latitude, longitude } = req.body
     Users.findOne({email})
     .then(async user => {
         if (user) {
@@ -20,10 +20,15 @@ router.post('/register', (req, res) => {
             try {
                 const hashedPass = await argon2.hash(password)
                 const newUser = new Users({
-                    first_name: first_name,
-                    last_name: last_name,
                     email: email,
-                    password: hashedPass
+                    username: username,
+                    password: hashedPass,
+                    streetAddress: streetAddress,
+                    city: city,
+                    country: country,
+                    businessName: businessName,
+                    latitude: latitude,
+                    longitude: longitude
                 })
                 newUser.save()
                 .then(user => {

@@ -40,7 +40,7 @@ const userSchema = new Schema({
         contentType: String,
         required: false
     },                                                       
-    lattitude: {
+    latitude: {
         type: String,
         required: false
     },

@@ -29,6 +29,9 @@ REQUIRED password
 ## /api/rest/events/near
 ### POST COMING SOON
 
+## /api/rest/user/:id
+### PUT with user details to modify a user and get that user back as an object
+
 ## /api/rest/events/attend/:id
 ### GET coming soon, to toggle attendance
 
@@ -71,7 +74,7 @@ photo: {
     contentType: String,
     required: false
 },                                                       
-lattitude: {
+latitude: {
     type: String,
     required: false
 },
