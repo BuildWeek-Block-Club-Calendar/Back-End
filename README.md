@@ -31,6 +31,9 @@ REQUIRED password
 ### POST with
 REQUIRED eventCountry
 
+## /api/rest/user/:id
+### PUT with user details to modify a user and get that user back as an object
+
 ## /api/rest/events/attend/:id
 ### GET to add user to event list, and event to user's list of events
 
@@ -79,7 +82,7 @@ photo: {
     contentType: String,
     required: false
 },                                                       
-lattitude: {
+latitude: {
     type: String,
     required: false
 },

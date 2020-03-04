@@ -131,6 +131,26 @@ router.get('/events/attend/:id', (req, res) => {
     
 })
 
+router.put('/user/:id', (req, res) => {
+    const { email, username, password, streetAddress, city, country, businessName, photo, latitude, longitude } = req.body
+    Users.findByIdAndUpdate({ _id: req.params.id }, {
+        email: email,
+        username: username,
+        password: password,
+        streetAddress: streetAddress,
+        city: city,
+        country: country,
+        businessName: businessName,
+        latitude: latitude,
+        longitude: longitude
+    }, { new: true }).then(user => {
+        res.status(200).json(user)
+    })
+    .catch(err => {
+        res.status(500).json(err)
+    })
+})
+
 router.get('/user/:id', (req, res) => {
     Users.findById(req.params.id)
     .then(user => {
@@ -140,4 +160,6 @@ router.get('/user/:id', (req, res) => {
         res.status(500).json(err)
     })
 })
+
+
 module.exports = router
