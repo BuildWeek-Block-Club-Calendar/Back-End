@@ -20,6 +20,7 @@ REQUIRED password
 
 ## /api/rest/events
 ### POST with all required fields as seen in schema
+### GET to get all events everywhere
 
 ## /api/rest/events/:id
 ### GET the details for an event
@@ -27,13 +28,20 @@ REQUIRED password
 ### DELETE to remove an event entirely
 
 ## /api/rest/events/near
-### POST COMING SOON
+### POST with
+REQUIRED eventCountry
 
 ## /api/rest/user/:id
 ### PUT with user details to modify a user and get that user back as an object
 
 ## /api/rest/events/attend/:id
-### GET coming soon, to toggle attendance
+### GET to add user to event list, and event to user's list of events
+
+## /api/rest/user/:id
+### GET a user object
+
+## /api/guest
+### GET all events, guest view
 
 ## User Schema
 ```js
