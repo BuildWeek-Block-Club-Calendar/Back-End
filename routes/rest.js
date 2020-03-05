@@ -115,7 +115,7 @@ router.delete('/events/:id', (req, res) => {
     })
 })
 
-router.get('/events/attend/:id', (req, res) => {
+router.post('/events/attend/:id', (req, res) => {
     const { _id } = req.body
     Events.findByIdAndUpdate({ _id: req.params.id }, {
         $push: {
