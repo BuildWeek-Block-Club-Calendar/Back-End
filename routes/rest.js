@@ -119,13 +119,13 @@ router.post('/events/attend/:id', (req, res) => {
     const { _id } = req.body
     Events.findByIdAndUpdate({ _id: req.params.id }, {
         $push: {
-            rsvpd: {_id : _id}
+            rsvpd: _id
         }
     }, { new: true })
     .then(event => {
         Users.findByIdAndUpdate({ _id: _id }, {
             $push: {
-                events: {_id: req.params.id}
+                events: req.params.id
             }
         }, { new: true })
         .then(user => {
