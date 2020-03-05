@@ -43,7 +43,7 @@ REQUIRED eventCountry
 ## /api/guest
 ### GET all events, guest view
 
-## User Schema
+## User Schema 
 ```js
 email: {
     type: String,
