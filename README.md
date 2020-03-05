@@ -35,7 +35,7 @@ REQUIRED eventCountry
 ### PUT with user details to modify a user and get that user back as an object
 
 ## /api/rest/events/attend/:id
-### GET to add user to event list, and event to user's list of events
+### POST with _id of user to add user to event list, and event to user's list of events
 
 ## /api/rest/user/:id
 ### GET a user object
