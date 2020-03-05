@@ -55,7 +55,11 @@ const eventSchema = new Schema({
     rsvpd: {
         type: Array,
         required: false
-    }                                                                 
+    },
+    users: {
+        type: Array,
+        required: false
+    }                                                               
 })
 
 const Events = mongoose.model('events', eventSchema)

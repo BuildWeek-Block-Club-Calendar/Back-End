@@ -117,27 +117,31 @@ router.delete('/events/:id', (req, res) => {
 
 router.post('/events/attend/:id', (req, res) => {
     const { _id } = req.body
-    Events.findByIdAndUpdate({ _id: req.params.id }, {
-        $push: {
-            rsvpd: _id
-        }
-    }, { new: true })
-    .then(event => {
-        Users.findByIdAndUpdate({ _id: _id }, {
+    Users.findById({ _id: _id })
+    .then(initalUser => {
+        Events.findByIdAndUpdate({ _id: req.params.id }, {
             $push: {
-                events: req.params.id
+                users: _id,
+                rsvpd: initalUser.username
             }
         }, { new: true })
-        .then(user => {
-            res.status(200).json(event)
+        .then(event => {
+            Users.findByIdAndUpdate({ _id: _id }, {
+                $push: {
+                    events: req.params.id
+                }
+            }, { new: true })
+            .then(user => {
+                res.status(200).json(event)
+            })
+            .catch(err => {
+                res.status(500).json(err)
+            })
+            
         })
         .catch(err => {
-            res.status(500).json(err)
+            res.status(500).json
         })
-        
-    })
-    .catch(err => {
-        res.status(500).json
     })
     
 })
