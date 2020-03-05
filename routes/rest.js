@@ -64,6 +64,17 @@ router.post('/events/near', (req, res) => {
 router.get('/events/:id', (req, res) => {
     Events.findById({ _id: req.params.id })
     .then(event => {
+        let usernames = []
+        event.rsvpd.forEach(rsvp => {
+            Users.findById({ _id: rsvp._id })
+            .then(user => {
+                usernames.push(user.username)
+            })
+            .catch(err => {
+                res.status(500).json(err)
+            })
+        })
+        event.users = usernames
         res.status(200).json(event)
     })
     .catch(err => {
